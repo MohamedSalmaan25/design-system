@@ -14,6 +14,9 @@ importers:
       '@changesets/cli':
         specifier: ^2.29.0
         version: 2.31.1
+      '@eslint/js':
+        specifier: ^9.39.5
+        version: 9.39.5
       turbo:
         specifier: ^2.5.0
         version: 2.10.5

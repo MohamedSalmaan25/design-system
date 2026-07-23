@@ -1,0 +1,1 @@
+.ms-paper{padding:var(--space-4);background-color:var(--color-bg-surface);color:var(--color-text);border-radius:var(--radius-md);transition:box-shadow var(--transition-normal)}.ms-paper--elevation{border:none}.ms-paper--outlined{border:1px solid var(--color-border);box-shadow:none}.ms-paper--square{border-radius:0}

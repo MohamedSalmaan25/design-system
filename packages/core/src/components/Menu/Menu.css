@@ -1,0 +1,83 @@
+.ms-menu {
+  position: fixed;
+  z-index: var(--z-overlay);
+  top: 0;
+  left: 0;
+}
+
+.ms-menu__paper {
+  min-width: 180px;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: var(--space-1) 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 16px);
+}
+
+.ms-menu__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ms-menu-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  user-select: none;
+  transition: background-color var(--transition-fast);
+}
+
+.ms-menu-item:hover:not(.ms-menu-item--disabled) {
+  background-color: var(--color-bg-subtle);
+}
+
+.ms-menu-item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.ms-menu-item--selected {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.ms-menu-item--disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.ms-menu-item__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-muted);
+}
+
+.ms-menu-item--selected .ms-menu-item__icon {
+  color: var(--color-primary);
+}
+
+.ms-menu-item__label {
+  flex: 1;
+}
+
+.ms-menu-divider {
+  margin: var(--space-1) 0;
+  border: none;
+  border-top: 1px solid var(--color-border);
+}

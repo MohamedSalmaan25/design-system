@@ -1,0 +1,131 @@
+.ms-typography {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  color: var(--color-text);
+}
+
+.ms-typography--h1 {
+  font-size: var(--font-size-5xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.ms-typography--h2 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.ms-typography--h3 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+.ms-typography--h4 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+}
+
+.ms-typography--h5 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+}
+
+.ms-typography--h6 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+}
+
+.ms-typography--body1 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+}
+
+.ms-typography--body2 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-relaxed);
+}
+
+.ms-typography--caption {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+.ms-typography--overline {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-normal);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.ms-typography--default {
+  color: var(--color-text);
+}
+
+.ms-typography--muted {
+  color: var(--color-text-muted);
+}
+
+.ms-typography--subtle {
+  color: var(--color-text-subtle);
+}
+
+.ms-typography--inverse {
+  color: var(--color-text-inverse);
+}
+
+.ms-typography--primary {
+  color: var(--color-primary);
+}
+
+.ms-typography--danger {
+  color: var(--color-danger);
+}
+
+.ms-typography--success {
+  color: var(--color-success);
+}
+
+.ms-typography--left {
+  text-align: left;
+}
+
+.ms-typography--center {
+  text-align: center;
+}
+
+.ms-typography--right {
+  text-align: right;
+}
+
+.ms-typography--normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.ms-typography--medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.ms-typography--semibold {
+  font-weight: var(--font-weight-semibold);
+}
+
+.ms-typography--bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.ms-typography--truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

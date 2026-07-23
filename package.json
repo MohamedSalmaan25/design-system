@@ -1,0 +1,25 @@
+{
+  "name": "@mohamed-salmaan/design-system-monorepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "publish-packages": "changeset publish"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.0",
+    "@changesets/cli": "^2.29.0",
+    "@changesets/changelog-github": "^0.5.1"
+  },
+  "packageManager": "pnpm@11.15.1",
+  "engines": {
+    "node": ">=18"
+  }
+}

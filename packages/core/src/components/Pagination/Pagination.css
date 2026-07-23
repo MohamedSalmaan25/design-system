@@ -1,0 +1,108 @@
+.ms-pagination {
+  font-family: var(--font-family-sans);
+}
+
+.ms-pagination__list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--space-1);
+}
+
+.ms-pagination__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  padding: 0 var(--space-2);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  font-family: inherit;
+  line-height: 1;
+  color: var(--color-text);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.ms-pagination__item:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.ms-pagination__item:hover:not(.ms-pagination__item--disabled) {
+  background-color: var(--color-bg-subtle);
+}
+
+/* ─── Variant ─── */
+.ms-pagination__item--outlined {
+  border-color: var(--color-border);
+}
+
+.ms-pagination__item--outlined:hover:not(.ms-pagination__item--disabled) {
+  border-color: var(--color-border-hover);
+}
+
+/* ─── Color: Primary ─── */
+.ms-pagination__item--primary.ms-pagination__item--selected {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+.ms-pagination__item--primary.ms-pagination__item--selected:hover:not(.ms-pagination__item--disabled) {
+  opacity: 0.9;
+}
+
+/* ─── Color: Neutral ─── */
+.ms-pagination__item--neutral.ms-pagination__item--selected {
+  background-color: var(--color-bg-muted);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+/* ─── Sizes ─── */
+.ms-pagination__item--sm {
+  min-width: 30px;
+  height: 30px;
+  font-size: var(--font-size-xs);
+  border-radius: var(--radius-sm);
+}
+
+.ms-pagination__item--lg {
+  min-width: 42px;
+  height: 42px;
+  font-size: var(--font-size-base);
+  border-radius: var(--radius-lg);
+}
+
+/* ─── Disabled ─── */
+.ms-pagination__item--disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+/* ─── Ellipsis ─── */
+.ms-pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 36px;
+  color: var(--color-text-muted);
+  user-select: none;
+}
+
+/* ─── Nav button ─── */
+.ms-pagination__nav-button {
+  font-size: var(--font-size-lg);
+}

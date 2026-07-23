@@ -1,0 +1,92 @@
+.ms-autocomplete {
+  position: relative;
+  font-family: var(--font-family-sans);
+}
+
+.ms-autocomplete--fullWidth {
+  width: 100%;
+}
+
+.ms-autocomplete__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ms-autocomplete__input {
+  padding-right: var(--space-8) !important;
+}
+
+.ms-autocomplete__label {
+  position: absolute;
+  top: 50%;
+  left: var(--space-3);
+  transform: translateY(-50%);
+  padding-inline: var(--space-1);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  transition: all var(--transition-fast);
+  background: transparent;
+  transform-origin: left top;
+  max-width: calc(100% - var(--space-8));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--font-size-base);
+}
+
+.ms-autocomplete--floating .ms-autocomplete__label,
+.ms-autocomplete--focused .ms-autocomplete__label {
+  transform: translateY(-100%) scale(0.8);
+  left: var(--space-2);
+  color: var(--color-primary);
+}
+
+.ms-autocomplete__indicator {
+  position: absolute;
+  right: var(--space-2);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+  padding: var(--space-1);
+}
+
+.ms-autocomplete__listbox {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: var(--z-dropdown);
+  margin: var(--space-1) 0 0;
+  padding: var(--space-1) 0;
+  list-style: none;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.ms-autocomplete__option {
+  padding: var(--space-2) var(--space-3);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  transition: background-color var(--transition-fast);
+}
+
+.ms-autocomplete__option--highlighted {
+  background-color: var(--color-bg-subtle);
+}
+
+.ms-autocomplete__option--selected {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-text);
+}
+
+.ms-autocomplete__option--loading,
+.ms-autocomplete__option--no-results {
+  color: var(--color-text-muted);
+  cursor: default;
+}

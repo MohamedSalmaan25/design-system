@@ -1,0 +1,160 @@
+.ms-textfield {
+  position: relative;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+.ms-textfield--fullWidth {
+  width: 100%;
+}
+
+.ms-textfield__wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ms-textfield__input {
+  width: 100%;
+  padding: var(--space-4) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  box-sizing: border-box;
+}
+
+.ms-textfield__input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+.ms-textfield textarea.ms-textfield__input {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.ms-textfield__label {
+  position: absolute;
+  top: 50%;
+  left: var(--space-3);
+  transform: translateY(-50%);
+  padding-inline: var(--space-1);
+  color: var(--color-text-muted);
+  pointer-events: none;
+  transition: all var(--transition-fast);
+  background: transparent;
+  transform-origin: left top;
+  max-width: calc(100% - var(--space-6));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ms-textfield--floating .ms-textfield__label,
+.ms-textfield--focused .ms-textfield__label {
+  transform: translateY(-100%) scale(0.8);
+  left: var(--space-2);
+  color: var(--color-primary);
+}
+
+.ms-textfield--focused .ms-textfield__input {
+  border-color: var(--color-primary);
+}
+
+.ms-textfield--error .ms-textfield__input {
+  border-color: var(--color-danger);
+}
+
+.ms-textfield--error .ms-textfield__input:focus {
+  box-shadow: 0 0 0 2px var(--color-danger-light);
+}
+
+.ms-textfield--error .ms-textfield__label,
+.ms-textfield--error .ms-textfield__helper {
+  color: var(--color-danger);
+}
+
+.ms-textfield__helper {
+  margin: var(--space-1) 0 0;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  padding-inline: var(--space-1);
+}
+
+/* Sizes */
+.ms-textfield--sm .ms-textfield__input {
+  padding: var(--space-2) var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.ms-textfield--sm .ms-textfield__label {
+  font-size: var(--font-size-sm);
+}
+
+.ms-textfield--lg .ms-textfield__input {
+  padding: var(--space-5) var(--space-4);
+  font-size: var(--font-size-lg);
+}
+
+/* Filled variant */
+.ms-textfield--filled .ms-textfield__input {
+  background-color: var(--color-bg-subtle);
+  border-color: transparent;
+  border-bottom-color: var(--color-border);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.ms-textfield--filled .ms-textfield__input:focus {
+  background-color: var(--color-bg-muted);
+  border-bottom-color: var(--color-primary);
+  box-shadow: none;
+}
+
+/* Standard variant */
+.ms-textfield--standard .ms-textfield__input {
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ms-textfield--standard .ms-textfield__input:focus {
+  border-bottom-color: var(--color-primary);
+  box-shadow: 0 1px 0 var(--color-primary);
+}
+
+.ms-textfield--standard .ms-textfield__label {
+  left: 0;
+}
+
+/* Adornments */
+.ms-textfield__adornment {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-3);
+  color: var(--color-text-muted);
+}
+
+/* Multiline */
+.ms-textfield--multiline .ms-textfield__label {
+  top: var(--space-4);
+  transform: none;
+}
+
+.ms-textfield--multiline.ms-textfield--floating .ms-textfield__label,
+.ms-textfield--multiline.ms-textfield--focused .ms-textfield__label {
+  transform: translateY(-50%) scale(0.8);
+  top: 0;
+}

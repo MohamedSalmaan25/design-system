@@ -1,0 +1,120 @@
+.ms-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.ms-alert__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: var(--font-size-base);
+}
+
+.ms-alert__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ms-alert__title {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+  font-size: var(--font-size-sm);
+}
+
+.ms-alert__close {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: var(--font-size-xs);
+  opacity: 0.7;
+  color: inherit;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast);
+}
+
+.ms-alert__close:hover {
+  opacity: 1;
+}
+
+.ms-alert--success.ms-alert--standard {
+  background-color: var(--color-success-light);
+  color: var(--color-text);
+}
+
+.ms-alert--info.ms-alert--standard {
+  background-color: var(--color-primary-light);
+  color: var(--color-text);
+}
+
+.ms-alert--warning.ms-alert--standard {
+  background-color: var(--color-warning-light);
+  color: var(--color-text);
+}
+
+.ms-alert--error.ms-alert--standard {
+  background-color: var(--color-danger-light);
+  color: var(--color-text);
+}
+
+.ms-alert--filled.ms-alert--success {
+  background-color: var(--color-success);
+  color: var(--color-text-inverse);
+}
+
+.ms-alert--filled.ms-alert--info {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.ms-alert--filled.ms-alert--warning {
+  background-color: var(--color-warning);
+  color: #000;
+}
+
+.ms-alert--filled.ms-alert--error {
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
+}
+
+.ms-alert--outlined {
+  background: var(--color-bg-surface);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.ms-alert--outlined.ms-alert--success {
+  border-color: var(--color-success);
+  color: var(--color-text);
+}
+
+.ms-alert--outlined.ms-alert--info {
+  border-color: var(--color-primary);
+  color: var(--color-text);
+}
+
+.ms-alert--outlined.ms-alert--warning {
+  border-color: var(--color-warning);
+  color: var(--color-text);
+}
+
+.ms-alert--outlined.ms-alert--error {
+  border-color: var(--color-danger);
+  color: var(--color-text);
+}

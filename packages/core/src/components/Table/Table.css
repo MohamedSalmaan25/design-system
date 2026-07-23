@@ -1,0 +1,69 @@
+.ms-table-container {
+  overflow: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.ms-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+}
+
+.ms-table--stickyHeader .ms-table__head {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.ms-table--sm .ms-table__cell {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.ms-table__head {
+  background-color: var(--color-bg-subtle);
+}
+
+.ms-table__row {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.ms-table__row:last-child {
+  border-bottom: none;
+}
+
+.ms-table__cell {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  color: var(--color-text);
+}
+
+.ms-table__cell--head {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.ms-table__cell--left {
+  text-align: left;
+}
+
+.ms-table__cell--center {
+  text-align: center;
+}
+
+.ms-table__cell--right {
+  text-align: right;
+}
+
+.ms-table__footer {
+  background-color: var(--color-bg-subtle);
+  border-top: 2px solid var(--color-border);
+}
+
+.ms-table--sm .ms-table__cell {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-sm);
+}

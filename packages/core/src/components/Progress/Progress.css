@@ -1,0 +1,51 @@
+.ms-linear-progress {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-muted);
+}
+
+.ms-linear-progress__bar {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal) ease;
+}
+
+.ms-linear-progress--primary .ms-linear-progress__bar {
+  background-color: var(--color-primary);
+}
+
+.ms-linear-progress--danger .ms-linear-progress__bar {
+  background-color: var(--color-danger);
+}
+
+.ms-linear-progress--success .ms-linear-progress__bar {
+  background-color: var(--color-success);
+}
+
+.ms-linear-progress--warning .ms-linear-progress__bar {
+  background-color: var(--color-warning);
+}
+
+.ms-linear-progress--indeterminate .ms-linear-progress__bar {
+  width: 40% !important;
+  animation: ms-linear-progress-indeterminate 1.4s ease infinite;
+}
+
+@keyframes ms-linear-progress-indeterminate {
+  0% {
+    left: -40%;
+  }
+  50% {
+    left: 20%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.ms-linear-progress:not(.ms-linear-progress--indeterminate) .ms-linear-progress__bar {
+  transition: width var(--transition-normal) ease;
+}

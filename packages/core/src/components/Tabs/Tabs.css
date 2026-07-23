@@ -1,0 +1,111 @@
+.ms-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+.ms-tabs--vertical {
+  flex-direction: row;
+}
+
+.ms-tabs--scrollable {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.ms-tabs--fullWidth .ms-tabs__tab-list {
+  display: flex;
+}
+
+.ms-tabs--fullWidth .ms-tab {
+  flex: 1;
+}
+
+.ms-tabs__tab-list {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid var(--color-border);
+  gap: 0;
+}
+
+.ms-tabs--vertical .ms-tabs__tab-list {
+  flex-direction: column;
+  border-bottom: none;
+  border-right: 1px solid var(--color-border);
+}
+
+.ms-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  transition: color var(--transition-fast);
+  user-select: none;
+}
+
+.ms-tab:hover:not(.ms-tab--disabled) {
+  color: var(--color-text);
+}
+
+.ms-tab--active {
+  color: var(--color-primary);
+}
+
+.ms-tab--disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.ms-tab:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+  border-radius: var(--radius-sm);
+}
+
+.ms-tab__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ms-tab__label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.ms-tab__indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full) var(--radius-full) 0 0;
+}
+
+.ms-tabs--vertical .ms-tab__indicator {
+  top: 0;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 2px;
+  height: auto;
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+.ms-tabs__panels {
+  flex: 1;
+}
+
+.ms-tab-panel {
+  padding: var(--space-4);
+  outline: none;
+}

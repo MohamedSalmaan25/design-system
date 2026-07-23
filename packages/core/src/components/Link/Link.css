@@ -1,0 +1,58 @@
+.ms-link {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  text-decoration: none;
+  transition:
+    color var(--transition-fast),
+    text-decoration-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.ms-link:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ─── Underline ─── */
+.ms-link--underline-none {
+  text-decoration: none;
+}
+
+.ms-link--underline-hover {
+  text-decoration: none;
+}
+
+.ms-link--underline-hover:hover {
+  text-decoration: underline;
+}
+
+.ms-link--underline-always {
+  text-decoration: underline;
+}
+
+/* ─── Color ─── */
+.ms-link--primary {
+  color: var(--color-primary);
+}
+
+.ms-link--primary:hover {
+  color: var(--color-primary);
+  text-decoration-color: var(--color-primary);
+}
+
+.ms-link--inherit {
+  color: inherit;
+}
+
+.ms-link--inherit:hover {
+  color: inherit;
+}
+
+.ms-link--muted {
+  color: var(--color-text-muted);
+}
+
+.ms-link--muted:hover {
+  color: var(--color-text);
+}

@@ -1,0 +1,92 @@
+.ms-list {
+  list-style: none;
+  margin: 0;
+  padding: var(--space-1) 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ms-list--dense {
+  padding: 0;
+}
+
+.ms-list__subheader {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-sans);
+}
+
+.ms-list-item {
+  display: flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-4);
+  position: relative;
+}
+
+.ms-list-item--disablePadding {
+  padding: 0;
+}
+
+.ms-list-item__secondary-action {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.ms-list-item-button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  background: none;
+  font: inherit;
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.ms-list-item-button:hover:not(:disabled):not(.ms-list-item-button--disabled) {
+  background-color: var(--color-bg-subtle);
+}
+
+.ms-list-item-button--selected {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.ms-list-item-button--disabled,
+.ms-list-item-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.ms-list-item-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 40px;
+  color: var(--color-text-muted);
+}
+
+.ms-list-item-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.ms-list-item-text__primary {
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+}
+
+.ms-list-item-text--secondary {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}

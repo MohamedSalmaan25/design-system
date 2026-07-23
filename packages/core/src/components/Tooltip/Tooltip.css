@@ -1,0 +1,82 @@
+.ms-tooltip {
+  position: relative;
+  display: inline-flex;
+}
+
+.ms-tooltip__content {
+  position: absolute;
+  z-index: var(--z-tooltip);
+  padding: var(--space-1) var(--space-2);
+  background-color: var(--color-text);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-xs);
+  font-family: var(--font-family-sans);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.ms-tooltip--visible {
+  opacity: 1;
+}
+
+.ms-tooltip--top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+}
+
+.ms-tooltip--bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+}
+
+.ms-tooltip--left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: 8px;
+}
+
+.ms-tooltip--right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 8px;
+}
+
+.ms-tooltip__arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-text);
+}
+
+.ms-tooltip--top .ms-tooltip__arrow {
+  bottom: -4px;
+  left: calc(50% - 4px);
+  transform: rotate(45deg);
+}
+
+.ms-tooltip--bottom .ms-tooltip__arrow {
+  top: -4px;
+  left: calc(50% - 4px);
+  transform: rotate(45deg);
+}
+
+.ms-tooltip--left .ms-tooltip__arrow {
+  right: -4px;
+  top: calc(50% - 4px);
+  transform: rotate(45deg);
+}
+
+.ms-tooltip--right .ms-tooltip__arrow {
+  left: -4px;
+  top: calc(50% - 4px);
+  transform: rotate(45deg);
+}

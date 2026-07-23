@@ -1,0 +1,122 @@
+.ms-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  cursor: pointer;
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  user-select: none;
+  vertical-align: middle;
+}
+
+.ms-switch--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.ms-switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.ms-switch__track {
+  position: relative;
+  display: inline-block;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-muted);
+  border: 2px solid var(--color-border);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+  box-sizing: content-box;
+}
+
+.ms-switch--sm .ms-switch__track {
+  width: 28px;
+  height: 16px;
+}
+
+.ms-switch--md .ms-switch__track {
+  width: 36px;
+  height: 20px;
+}
+
+.ms-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-fast);
+}
+
+.ms-switch--sm .ms-switch__thumb {
+  width: 10px;
+  height: 10px;
+}
+
+.ms-switch--md .ms-switch__thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.ms-switch--checked .ms-switch__track {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.ms-switch--checked.ms-switch--danger .ms-switch__track {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.ms-switch--checked.ms-switch--success .ms-switch__track {
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.ms-switch--checked .ms-switch__thumb {
+  background: #fff;
+}
+
+.ms-switch--sm.ms-switch--checked .ms-switch__thumb {
+  transform: translateX(12px);
+}
+
+.ms-switch--md.ms-switch--checked .ms-switch__thumb {
+  transform: translateX(16px);
+}
+
+.ms-switch:hover:not(.ms-switch--disabled) .ms-switch__track {
+  border-color: var(--color-primary);
+}
+
+.ms-switch--danger:hover:not(.ms-switch--disabled) .ms-switch__track {
+  border-color: var(--color-danger);
+}
+
+.ms-switch--success:hover:not(.ms-switch--disabled) .ms-switch__track {
+  border-color: var(--color-success);
+}
+
+.ms-switch__input:focus-visible + .ms-switch__track {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.ms-switch--danger .ms-switch__input:focus-visible + .ms-switch__track {
+  outline-color: var(--color-danger);
+}
+
+.ms-switch--success .ms-switch__input:focus-visible + .ms-switch__track {
+  outline-color: var(--color-success);
+}
+
+.ms-switch__label {
+  font-size: inherit;
+  line-height: 1.25;
+}

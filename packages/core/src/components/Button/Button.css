@@ -1,0 +1,302 @@
+.ms-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-sans);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+  cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    opacity var(--transition-fast);
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.ms-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.ms-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ─── Sizes ─── */
+.ms-btn--sm {
+  height: 32px;
+  padding-inline: var(--space-3);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
+  gap: var(--space-1);
+}
+
+.ms-btn--md {
+  height: 40px;
+  padding-inline: var(--space-4);
+  font-size: var(--font-size-base);
+}
+
+.ms-btn--lg {
+  height: 48px;
+  padding-inline: var(--space-6);
+  font-size: var(--font-size-lg);
+  border-radius: var(--radius-lg);
+  gap: var(--space-3);
+}
+
+/* ─── Variant: Solid ─── */
+.ms-btn--solid.ms-btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-primary);
+}
+
+.ms-btn--solid.ms-btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.ms-btn--solid.ms-btn--danger {
+  background-color: var(--color-danger);
+  color: var(--color-text-inverse);
+  border-color: var(--color-danger);
+}
+
+.ms-btn--solid.ms-btn--danger:hover:not(:disabled) {
+  background-color: var(--color-danger-hover);
+  border-color: var(--color-danger-hover);
+}
+
+.ms-btn--solid.ms-btn--success {
+  background-color: var(--color-success);
+  color: var(--color-text-inverse);
+  border-color: var(--color-success);
+}
+
+.ms-btn--solid.ms-btn--success:hover:not(:disabled) {
+  background-color: var(--color-success-hover);
+  border-color: var(--color-success-hover);
+}
+
+.ms-btn--solid.ms-btn--warning {
+  background-color: var(--color-warning);
+  color: #000;
+  border-color: var(--color-warning);
+}
+
+.ms-btn--solid.ms-btn--warning:hover:not(:disabled) {
+  background-color: var(--color-warning-hover);
+  border-color: var(--color-warning-hover);
+}
+
+.ms-btn--solid.ms-btn--neutral {
+  background-color: var(--color-neutral);
+  color: var(--color-text-inverse);
+  border-color: var(--color-neutral);
+}
+
+.ms-btn--solid.ms-btn--neutral:hover:not(:disabled) {
+  background-color: var(--color-neutral-hover);
+  border-color: var(--color-neutral-hover);
+}
+
+/* ─── Variant: Outline ─── */
+.ms-btn--outline {
+  background-color: transparent;
+}
+
+.ms-btn--outline.ms-btn--primary {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.ms-btn--outline.ms-btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-light);
+}
+
+.ms-btn--outline.ms-btn--danger {
+  color: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+.ms-btn--outline.ms-btn--danger:hover:not(:disabled) {
+  background-color: var(--color-danger-light);
+}
+
+.ms-btn--outline.ms-btn--success {
+  color: var(--color-success);
+  border-color: var(--color-success);
+}
+
+.ms-btn--outline.ms-btn--success:hover:not(:disabled) {
+  background-color: var(--color-success-light);
+}
+
+.ms-btn--outline.ms-btn--warning {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+}
+
+.ms-btn--outline.ms-btn--warning:hover:not(:disabled) {
+  background-color: var(--color-warning-light);
+}
+
+.ms-btn--outline.ms-btn--neutral {
+  color: var(--color-text-muted);
+  border-color: var(--color-border);
+}
+
+.ms-btn--outline.ms-btn--neutral:hover:not(:disabled) {
+  background-color: var(--color-bg-subtle);
+  border-color: var(--color-border-hover);
+}
+
+/* ─── Variant: Ghost ─── */
+.ms-btn--ghost {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.ms-btn--ghost.ms-btn--primary {
+  color: var(--color-primary);
+}
+
+.ms-btn--ghost.ms-btn--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-light);
+}
+
+.ms-btn--ghost.ms-btn--danger {
+  color: var(--color-danger);
+}
+
+.ms-btn--ghost.ms-btn--danger:hover:not(:disabled) {
+  background-color: var(--color-danger-light);
+}
+
+.ms-btn--ghost.ms-btn--success {
+  color: var(--color-success);
+}
+
+.ms-btn--ghost.ms-btn--success:hover:not(:disabled) {
+  background-color: var(--color-success-light);
+}
+
+.ms-btn--ghost.ms-btn--warning {
+  color: var(--color-warning);
+}
+
+.ms-btn--ghost.ms-btn--warning:hover:not(:disabled) {
+  background-color: var(--color-warning-light);
+}
+
+.ms-btn--ghost.ms-btn--neutral {
+  color: var(--color-text-muted);
+}
+
+.ms-btn--ghost.ms-btn--neutral:hover:not(:disabled) {
+  background-color: var(--color-bg-subtle);
+}
+
+/* ─── Variant: Link ─── */
+.ms-btn--link {
+  background-color: transparent;
+  border-color: transparent;
+  padding-inline: 0;
+  text-decoration: none;
+}
+
+.ms-btn--link:hover:not(:disabled) {
+  text-decoration: underline;
+}
+
+.ms-btn--link.ms-btn--primary {
+  color: var(--color-primary);
+}
+
+.ms-btn--link.ms-btn--primary:hover:not(:disabled) {
+  color: var(--color-primary-hover);
+}
+
+.ms-btn--link.ms-btn--danger {
+  color: var(--color-danger);
+}
+
+.ms-btn--link.ms-btn--danger:hover:not(:disabled) {
+  color: var(--color-danger-hover);
+}
+
+.ms-btn--link.ms-btn--success {
+  color: var(--color-success);
+}
+
+.ms-btn--link.ms-btn--success:hover:not(:disabled) {
+  color: var(--color-success-hover);
+}
+
+.ms-btn--link.ms-btn--warning {
+  color: var(--color-warning);
+}
+
+.ms-btn--link.ms-btn--warning:hover:not(:disabled) {
+  color: var(--color-warning-hover);
+}
+
+.ms-btn--link.ms-btn--neutral {
+  color: var(--color-text-muted);
+}
+
+.ms-btn--link.ms-btn--neutral:hover:not(:disabled) {
+  color: var(--color-text);
+}
+
+/* ─── Full Width ─── */
+.ms-btn--fullWidth {
+  width: 100%;
+}
+
+/* ─── Loading ─── */
+.ms-btn--loading {
+  position: relative;
+}
+
+.ms-btn__spinner {
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--radius-full);
+  animation: ms-spin 0.6s linear infinite;
+}
+
+@keyframes ms-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── Icon Only ─── */
+.ms-btn--iconOnly {
+  padding-inline: 0;
+  aspect-ratio: 1;
+}
+
+.ms-btn__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ms-btn__label {
+  display: inline-flex;
+  align-items: center;
+}

@@ -1,0 +1,137 @@
+.ms-stepper {
+  display: flex;
+  font-family: var(--font-family-sans);
+}
+
+.ms-stepper--horizontal {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.ms-stepper--vertical {
+  flex-direction: column;
+}
+
+.ms-stepper__step-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.ms-stepper__step-wrapper--fill {
+  flex: 1;
+}
+
+.ms-stepper--vertical .ms-stepper__step-wrapper {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.ms-stepper--vertical .ms-stepper__step {
+  flex-direction: row;
+  align-items: center;
+}
+
+.ms-stepper--vertical .ms-stepper__connector {
+  margin-left: 14px;
+  padding-left: 0;
+  min-height: 24px;
+  align-self: stretch;
+}
+
+.ms-stepper--vertical .ms-stepper__connector-line {
+  width: 2px;
+  height: 100%;
+  margin: 0;
+}
+
+.ms-stepper__step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.ms-stepper__step--active {
+  color: var(--color-primary);
+}
+
+.ms-stepper__step--completed {
+  color: var(--color-success);
+}
+
+.ms-stepper__step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  border: 2px solid currentColor;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  flex-shrink: 0;
+}
+
+.ms-stepper__step--completed .ms-stepper__step-icon {
+  background-color: var(--color-success);
+  border-color: var(--color-success);
+  color: var(--color-text-inverse);
+}
+
+.ms-stepper__step--active .ms-stepper__step-icon {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.ms-stepper__step-label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.ms-stepper__step-optional {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-muted);
+}
+
+.ms-stepper__connector {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 24px;
+}
+
+.ms-stepper__connector-line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-border);
+  margin: 0 var(--space-2);
+}
+
+.ms-stepper__connector--active .ms-stepper__connector-line {
+  background-color: var(--color-success);
+}
+
+.ms-stepper--vertical .ms-stepper__connector {
+  min-width: unset;
+  min-height: 24px;
+  margin-left: 16px;
+  padding-left: var(--space-4);
+}
+
+.ms-stepper--vertical .ms-stepper__connector-line {
+  width: 2px;
+  height: 100%;
+  margin: 0;
+}
+
+.ms-stepper--alternative-label {
+  text-align: center;
+}
+
+.ms-stepper--alternative-label .ms-stepper__step {
+  flex-direction: column;
+}

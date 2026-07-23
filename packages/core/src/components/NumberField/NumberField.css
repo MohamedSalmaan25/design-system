@@ -1,0 +1,96 @@
+.ms-number-field {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-bg);
+  font-family: var(--font-family-sans);
+}
+
+.ms-number-field--fullWidth {
+  width: 100%;
+}
+
+.ms-number-field--error {
+  border-color: var(--color-danger);
+}
+
+.ms-number-field--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.ms-number-field__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  user-select: none;
+  padding: 0;
+}
+
+.ms-number-field__btn:hover:not(:disabled) {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-text);
+}
+
+.ms-number-field__btn:disabled {
+  cursor: not-allowed;
+  color: var(--color-border);
+}
+
+.ms-number-field--sm .ms-number-field__btn {
+  width: 28px;
+  height: 28px;
+  font-size: var(--font-size-base);
+}
+
+.ms-number-field--md .ms-number-field__btn {
+  width: 36px;
+  height: 36px;
+}
+
+.ms-number-field--lg .ms-number-field__btn {
+  width: 44px;
+  height: 44px;
+  font-size: var(--font-size-xl);
+}
+
+.ms-number-field__input {
+  width: 64px;
+  border: none;
+  outline: none;
+  text-align: center;
+  background: transparent;
+  color: var(--color-text);
+  font-family: inherit;
+  -moz-appearance: textfield;
+}
+
+.ms-number-field__input::-webkit-outer-spin-button,
+.ms-number-field__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ms-number-field--sm .ms-number-field__input {
+  height: 28px;
+  font-size: var(--font-size-sm);
+}
+
+.ms-number-field--md .ms-number-field__input {
+  height: 36px;
+  font-size: var(--font-size-base);
+}
+
+.ms-number-field--lg .ms-number-field__input {
+  height: 44px;
+  font-size: var(--font-size-lg);
+}

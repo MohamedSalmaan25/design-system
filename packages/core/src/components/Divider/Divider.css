@@ -1,0 +1,27 @@
+.ms-divider {
+  margin: 0;
+  border: none;
+  flex-shrink: 0;
+  background-color: var(--color-border);
+}
+
+.ms-divider--horizontal {
+  width: 100%;
+  height: 1px;
+}
+
+.ms-divider--vertical {
+  width: 1px;
+  height: 1em;
+  align-self: stretch;
+  display: inline-block;
+}
+
+.ms-divider--inset {
+  margin-left: var(--space-4);
+}
+
+.ms-divider--middle {
+  margin-left: var(--space-4);
+  margin-right: var(--space-4);
+}

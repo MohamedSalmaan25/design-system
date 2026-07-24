@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Meta, StoryObj } from '@storybook/react'
-import { LinearProgress } from './Progress'
+import { LinearProgress } from './LinearProgress'
 
 const meta: Meta<typeof LinearProgress> = {
   title: 'Components/Progress',

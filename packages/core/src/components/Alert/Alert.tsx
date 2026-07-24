@@ -15,7 +15,7 @@ interface AlertProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
 }
 
 const iconMap: Record<AlertSeverity, string> = {
-  success: 'V',
+  success: '✓',
   info: 'i',
   warning: '!',
   error: 'X',

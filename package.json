@@ -1,5 +1,6 @@
 {
   "name": "@mohamed-salmaan/design-system-monorepo",
+  "license": "MIT",
   "private": true,
   "type": "module",
   "scripts": {

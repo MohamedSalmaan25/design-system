@@ -1,6 +1,23 @@
 {
   "name": "@mohamedsalmaan/design-system",
   "version": "0.2.0",
+  "license": "MIT",
+  "description": "A modern, lightweight React component library with dark mode support",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MohamedSalmaan25/design-system.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MohamedSalmaan25/design-system/issues"
+  },
+  "homepage": "https://github.com/MohamedSalmaan25/design-system",
+  "keywords": [
+    "react",
+    "components",
+    "design-system",
+    "ui",
+    "dark-mode"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

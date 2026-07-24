@@ -1,6 +1,6 @@
 import { forwardRef, type HTMLAttributes } from 'react'
 import { cn } from '../../utils/cn.js'
-import './Progress.css'
+import './LinearProgress.css'
 
 type ProgressSize = 'sm' | 'md' | 'lg'
 type ProgressColor = 'primary' | 'danger' | 'success' | 'warning'

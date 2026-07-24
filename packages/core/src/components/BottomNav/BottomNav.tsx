@@ -7,7 +7,7 @@ interface BottomNavProps extends HTMLAttributes<HTMLElement> {
 }
 
 const BottomNav = forwardRef<ElementRef<'nav'>, BottomNavProps>(
-  ({ showLabels = true, className, children, ...props }, ref) => {
+  ({ showLabels: _showLabels = true, className, children, ...props }, ref) => {
     return (
       <nav
         ref={ref}

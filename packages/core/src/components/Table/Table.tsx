@@ -1,4 +1,4 @@
-import { forwardRef, type ForwardRefExoticComponent, type RefAttributes, type HTMLAttributes, type ElementRef, type ThHTMLAttributes, type TdHTMLAttributes, type PropsWithoutRef } from 'react'
+import { forwardRef, type ForwardRefExoticComponent, type RefAttributes, type HTMLAttributes, type ElementRef, type PropsWithoutRef } from 'react'
 import { cn } from '../../utils/cn.js'
 import './Table.css'
 

@@ -37,7 +37,7 @@ const Autocomplete = forwardRef<HTMLDivElement, AutocompleteProps>(
       disabled = false,
       error = false,
       fullWidth = false,
-      freeSolo = false,
+      freeSolo: _freeSolo = false,
       loading = false,
       noOptionsText = 'No options',
       className,

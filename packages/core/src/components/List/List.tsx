@@ -9,7 +9,7 @@ interface ListProps extends HTMLAttributes<HTMLUListElement> {
 }
 
 const List = forwardRef<ElementRef<'ul'>, ListProps>(
-  ({ dense, disablePadding, subheader, className, children, ...props }, ref) => (
+  ({ dense, disablePadding: _disablePadding, subheader, className, children, ...props }, ref) => (
     <div className="ms-list-wrapper">
       {subheader && <div className="ms-list__subheader">{subheader}</div>}
       <ul

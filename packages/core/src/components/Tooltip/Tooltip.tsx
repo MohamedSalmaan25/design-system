@@ -1,4 +1,4 @@
-import { forwardRef, useState, useRef, useEffect, useCallback, type ReactElement, type ElementRef } from 'react'
+import { forwardRef, useState, useRef, useEffect, useCallback, type ReactElement } from 'react'
 import { cn } from '../../utils/cn.js'
 import './Tooltip.css'
 
@@ -137,7 +137,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         style={{ position: 'relative', display: 'inline-flex' }}
       >
         <span ref={triggerRef} style={{ display: 'inline-flex' }}>
-          {children}
+          {child}
         </span>
         <div
           ref={(el) => {

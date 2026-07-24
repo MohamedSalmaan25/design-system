@@ -31,14 +31,12 @@ const TransferList = forwardRef<ElementRef<'div'>, TransferListProps>(
     const moveRight = useCallback(() => {
       if (disabled) return
       const moved = left.filter((item) => selectedLeft.has(item.value))
-      const remaining = left.filter((item) => !selectedLeft.has(item.value))
       onChange?.([...right, ...moved])
       setSelectedLeft(new Set())
     }, [left, right, selectedLeft, onChange, disabled])
 
     const moveLeft = useCallback(() => {
       if (disabled) return
-      const moved = right.filter((item) => selectedRight.has(item.value))
       const remaining = right.filter((item) => !selectedRight.has(item.value))
       onChange?.(remaining)
       setSelectedRight(new Set())

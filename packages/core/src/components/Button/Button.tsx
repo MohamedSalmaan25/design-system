@@ -49,11 +49,11 @@ const Button = forwardRef<ElementRef<'button'>, ButtonProps>(
     if (href) {
       return (
         <a
-          ref={ref as any}
+          ref={ref as unknown as React.Ref<HTMLAnchorElement>}
           className={classNames}
           href={href}
           aria-disabled={disabled || loading}
-          {...(props as any)}
+          {...(props as unknown as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {loading && <span className="ms-btn__spinner" aria-hidden="true" />}
           {!loading && icon && iconPosition === 'start' && (

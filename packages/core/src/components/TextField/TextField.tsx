@@ -1,4 +1,4 @@
-import { forwardRef, useId, useState, useCallback, type InputHTMLAttributes, type TextareaHTMLAttributes } from 'react'
+import { forwardRef, useId, useState, useCallback, type InputHTMLAttributes, type TextareaHTMLAttributes, type ChangeEvent, type FocusEvent } from 'react'
 import { cn } from '../../utils/cn.js'
 import './TextField.css'
 
@@ -30,43 +30,47 @@ type TextFieldProps = TextFieldAsInput | TextFieldAsTextarea
 
 const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextFieldProps>(
   (props, ref) => {
-    const {
-      label,
-      helperText,
-      error = false,
-      fullWidth = false,
-      size = 'md',
-      variant = 'outlined',
-      startAdornment,
-      endAdornment,
-      multiline = false,
-      className,
-      ...rest
-    } = props as BaseTextFieldProps & Record<string, any>
+    const merged = props as BaseTextFieldProps & Record<string, unknown>
+    const label = merged.label as string | undefined
+    const helperText = merged.helperText as string | undefined
+    const error = !!merged.error
+    const fullWidth = !!merged.fullWidth
+    const size = (merged.size as string) || 'md'
+    const variant = (merged.variant as string) || 'outlined'
+    const startAdornment = merged.startAdornment as React.ReactNode | undefined
+    const endAdornment = merged.endAdornment as React.ReactNode | undefined
+    const multiline = !!merged.multiline
+    const className = merged.className as string | undefined
+
+    const knownKeys = new Set(['label', 'helperText', 'error', 'fullWidth', 'size', 'variant', 'startAdornment', 'endAdornment', 'multiline', 'className'])
+    const r: Record<string, unknown> = {}
+    for (const key of Object.keys(merged)) {
+      if (!knownKeys.has(key)) r[key] = merged[key]
+    }
 
     const id = useId()
-    const inputId = (rest as any).id || `ms-textfield-${id}`
+    const inputId = (r.id as string) || `ms-textfield-${id}`
     const [focused, setFocused] = useState(false)
     const [hasInput, setHasInput] = useState(
-      ((rest as any).value !== undefined && (rest as any).value !== '') ||
-      ((rest as any).defaultValue !== undefined && (rest as any).defaultValue !== '')
+      (r.value !== undefined && r.value !== '') ||
+      (r.defaultValue !== undefined && r.defaultValue !== '')
     )
     const isFloating = focused || hasInput
 
-    const handleFocus = useCallback((e: any) => {
-      setFocused(true)
-      ;(rest as any).onFocus?.(e)
-    }, [rest])
+    const handleFocus = useCallback((e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFocused(true);
+      (r.onFocus as ((e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void) | undefined)?.(e)
+    }, [])
 
-    const handleBlur = useCallback((e: any) => {
-      setFocused(false)
-      ;(rest as any).onBlur?.(e)
-    }, [rest])
+    const handleBlur = useCallback((e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setFocused(false);
+      (r.onBlur as ((e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => void) | undefined)?.(e)
+    }, [])
 
-    const handleChange = useCallback((e: any) => {
-      setHasInput(e.target.value !== '')
-      ;(rest as any).onChange?.(e)
-    }, [rest])
+    const handleChange = useCallback((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      setHasInput(e.target.value !== '');
+      (r.onChange as ((e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => void) | undefined)?.(e)
+    }, [])
 
     const rootClassName = cn(
       'ms-textfield',
@@ -80,25 +84,35 @@ const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextFieldPr
       className,
     )
 
-    const inputProps = {
-      id: inputId,
-      className: 'ms-textfield__input',
-      onFocus: handleFocus,
-      onBlur: handleBlur,
-      onChange: handleChange,
-      placeholder: label && !isFloating ? '' : (rest as any).placeholder,
-      ref,
-      ...rest,
-    }
+    const placeholder = label && !isFloating ? '' : (r.placeholder as string | undefined)
 
     return (
       <div className={rootClassName}>
         {startAdornment && <span className="ms-textfield__adornment ms-textfield__adornment--start">{startAdornment}</span>}
         <div className="ms-textfield__wrapper">
           {multiline ? (
-            <textarea {...inputProps as any} rows={(props as any).rows || 4} />
+            <textarea
+              id={inputId}
+              className="ms-textfield__input"
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              placeholder={placeholder}
+              ref={ref as React.Ref<HTMLTextAreaElement>}
+              rows={(r.rows as number) || 4}
+              {...r as unknown as TextareaHTMLAttributes<HTMLTextAreaElement>}
+            />
           ) : (
-            <input {...inputProps as any} />
+            <input
+              id={inputId}
+              className="ms-textfield__input"
+              onFocus={handleFocus}
+              onBlur={handleBlur}
+              onChange={handleChange}
+              placeholder={placeholder}
+              ref={ref as React.Ref<HTMLInputElement>}
+              {...r as unknown as InputHTMLAttributes<HTMLInputElement>}
+            />
           )}
           {label && <label htmlFor={inputId} className="ms-textfield__label">{label}</label>}
         </div>
@@ -111,4 +125,4 @@ const TextField = forwardRef<HTMLInputElement | HTMLTextAreaElement, TextFieldPr
 
 TextField.displayName = 'TextField'
 
-export { TextField, type TextFieldProps }
+export { TextField, type TextFieldProps, type TextFieldSize, type TextFieldVariant }

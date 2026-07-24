@@ -1,10 +1,8 @@
 import {
   forwardRef,
   createContext,
-  useContext,
   Children,
   isValidElement,
-  cloneElement,
   type ElementRef,
   type ReactNode,
   type HTMLAttributes,
@@ -95,7 +93,7 @@ Breadcrumbs.displayName = 'Breadcrumbs'
 interface BreadcrumbsItemProps
   extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href?: string
-  linkComponent?: React.ElementType<any>
+   linkComponent?: React.ElementType<React.ComponentProps<'a'>>
 }
 
 const Item = forwardRef<ElementRef<'a'>, BreadcrumbsItemProps>(
@@ -106,10 +104,10 @@ const Item = forwardRef<ElementRef<'a'>, BreadcrumbsItemProps>(
     if (isCurrent) {
       return (
         <span
-          ref={ref as any}
+          ref={ref}
           className={cn('ms-breadcrumbs__link', 'ms-breadcrumbs__link--current', className)}
           aria-current="page"
-          {...(props as any)}
+          {...props}
         >
           {children}
         </span>

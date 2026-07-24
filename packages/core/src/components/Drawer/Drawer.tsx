@@ -51,7 +51,6 @@ const Drawer = forwardRef<ElementRef<'div'>, DrawerProps>(
     }, [open, onClose, variant])
 
     const widthStyle = anchor === 'left' || anchor === 'right' ? { width } : { height: width }
-    const isHorizontal = anchor === 'left' || anchor === 'right'
 
     const paper = (
       <div

@@ -32,12 +32,12 @@ const Fab = forwardRef<ElementRef<'button'>, FabProps>(
     if (href) {
       return (
         <a
-          ref={ref as any}
+          ref={ref as unknown as React.Ref<HTMLAnchorElement>}
           className={classNames}
           href={href}
           aria-disabled={disabled}
-          onClick={disabled ? undefined : onClick}
-          {...(props as any)}
+          onClick={disabled ? undefined : onClick as unknown as React.MouseEventHandler<HTMLAnchorElement>}
+          {...(props as unknown as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
         >
           {content}
         </a>

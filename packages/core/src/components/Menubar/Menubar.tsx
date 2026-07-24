@@ -1,4 +1,4 @@
-import { forwardRef, useState, useCallback, useRef, useEffect, type HTMLAttributes, type ElementRef, type ButtonHTMLAttributes } from 'react'
+import { forwardRef, useState, useRef, useEffect, type HTMLAttributes, type ElementRef, type ReactElement } from 'react'
 import { cn } from '../../utils/cn.js'
 import './Menubar.css'
 
@@ -47,11 +47,11 @@ const MenubarContext = forwardRef<ElementRef<'div'>, MenubarProps>(
                     if (activeIndex !== null) setActiveIndex(index)
                   }}
                 >
-                  {(child as any).props?.trigger}
+                  {(child as ReactElement<MenubarItemProps>).props?.trigger}
                 </button>
                 {isOpen && (
                   <div className="ms-menubar__menu" role="menu">
-                    {(child as any).props?.children}
+                    {(child as ReactElement<MenubarItemProps>).props?.children}
                   </div>
                 )}
               </div>
@@ -85,10 +85,10 @@ const Menu = forwardRef<ElementRef<'div'>, MenubarMenuProps>(
 )
 Menu.displayName = 'Menubar.Menu'
 
-;(MenubarContext as any).Item = Item
-;(MenubarContext as any).Menu = Menu
+;(MenubarContext as unknown as Record<string, unknown>).Item = Item
+;(MenubarContext as unknown as Record<string, unknown>).Menu = Menu
 
-const Menubar = MenubarContext as typeof MenubarContext & {
+const Menubar = MenubarContext as unknown as typeof MenubarContext & {
   Item: typeof Item
   Menu: typeof Menu
 }

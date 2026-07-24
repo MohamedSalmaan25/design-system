@@ -94,7 +94,7 @@ const Dialog = forwardRef<HTMLDivElement, DialogProps>(
           ref={(node) => {
             if (typeof ref === 'function') ref(node)
             else if (ref) ref.current = node
-            ;(paperRef as any).current = node
+            ;(paperRef as React.MutableRefObject<HTMLDivElement | null>).current = node
           }}
           role="dialog"
           aria-modal="true"

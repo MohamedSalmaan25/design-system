@@ -27,7 +27,7 @@ const ButtonGroup = forwardRef<ElementRef<'div'>, ButtonGroupProps>(
   }, ref) => {
     const clonedChildren = Children.map(children, (child) => {
       if (isValidElement(child)) {
-        return cloneElement(child as ReactElement<any>, {
+        return cloneElement(child as ReactElement<Record<string, unknown>>, {
           variant,
           color,
           size,
